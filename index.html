@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curiculo Criativo GIF</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="cubo.css">
+
+</head>
+
+<body>
+
+
+<div class="loader" id="loader">
+    <div class="loader-cube"></div>
+    <div class="loader-text">CUBO 3D</div>
+</div>
+
+
+<div class="grid-overlay"></div>
+
+
+<canvas id="particles"></canvas>
+
+<div class="title">
+    <div class="title-dot"></div>
+    CUBO 3D
+</div>
+
+
+<div class="sidebar">
+    <div class="icon" id="homeBtn" data-tip="Início">🏠</div>
+    <div class="icon" id="profileBtn" data-tip="Perfil">👤</div>
+    <div class="icon" id="cvBtn" data-tip="Currículo">📄</div>
+    <div class="icon" id="projectBtn" data-tip="Projetos">🧩</div>
+    <div class="icon" id="contactBtn" data-tip="Contacto">📞</div>
+</div>
+
+
+<div class="hud" id="hud">
+    <span class="hud-label">ROT </span><span class="hud-val" id="hud-x">X: 0.00</span><br>
+    <span class="hud-label">ROT </span><span class="hud-val" id="hud-y">Y: 0.00</span><br>
+    <span class="hud-label">ROT </span><span class="hud-val" id="hud-z">Z: 0.00</span>
+</div>
+
+
+<div class="zoom-indicator" id="zoomInd">ZOOM: 100%</div>
+
+
+<div class="overlay" id="overlay"></div>
+
+
+<div class="panel" id="profilePanel">
+    <button class="close-btn" data-close="profilePanel">&times;</button>
+    <div class="panel-header">Sobre mim</div>
+    <img class="profile-avatar" src="imgs/eur.png" alt="Gustavo">
+    <div class="profile-name">Gustavo Ildefonso Fernandes</div>
+    <div class="profile-stats">
+        <div class="stat-item">
+            <div class="stat-num">36+</div>
+            <div class="stat-label">Projetos</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-num">3</div>
+            <div class="stat-label">Idiomas</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-num">16</div>
+            <div class="stat-label">Anos</div>
+        </div>
+    </div>
+    <div class="profile-bio">
+        <b>Sobre mim</b><br><br>
+        Sou Gustavo Ildefonso Fernandes, nasci dia 15 de outubro de 2009 na cidade de Lisboa.
+        Sou estudante do curso Técnico Profissional de Multimédia na EPAD.
+        Pretendo melhorar minhas habilidades a cada dia.
+        Gosto muito de ajudar pessoas e a criar projetos 3D.
+        E futuramente pretendo trabalhar com modelagem 3D.
+    </div>
+    <div class="contact-card">
+            <div class="contact-card-icon">📍</div>
+            <div>
+                <div class="contact-card-label">Morada</div>
+                <div class="contact-card-value">Travessa das Olaias, Ramada</div>
+            </div>
+        </div>
+    <div class="profile-links">
+        <a class="profile-link" href="https://github.com/GustavoIF99" target="_blank">GitHub</a>
+        <a class="profile-link" href="#" id="goToContact">Contacto</a>
+    </div>
+</div>
+
+<div class="panel" id="cvPanel">
+    <button class="close-btn" data-close="cvPanel">&times;</button>
+    <div class="panel-header">Currículo</div>
+    <img class="cv-avatar" src="imgs/eur.png" alt="Gustavo">
+    <div class="profile-name" style="font-size:18px;">Gustavo Ildefonso Fernandes</div>
+    <div class="cv-section">
+        <div class="cv-section-title">Experiência</div>
+        <div class="cv-item">
+            <div class="cv-dot"></div>
+            <div>
+                <div class="cv-item-title">Ferramentas da Adobe</div>
+                <div class="cv-item-sub">Photoshop, Illustrator, After Effects, Premiere Pro, InDesign, Animate </div>
+            </div>
+        </div>
+        <div class="cv-item">
+            <div class="cv-dot"></div>
+            <div>
+                <div class="cv-item-title">Outros</div>
+                <div class="cv-item-sub">Canva, WordPress, Vscode, 3ds Max, Sublime text </div>
+            </div>
+        </div>
+    </div>
+    <div class="cv-section">
+        <div class="cv-section-title">Idiomas</div>
+        <div class="lang-item">
+            <img class="lang-flag" src="imgs/pt.jpg" alt="Portugal">
+            <div class="lang-info">
+                <div class="lang-name">Português <span class="lang-level-text">Nativo</span></div>
+                <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+            </div>
+        </div>
+        <div class="lang-item">
+            <img class="lang-flag" src="imgs/espanha.jpg" alt="Espanha">
+            <div class="lang-info">
+                <div class="lang-name">Espanhol <span class="lang-level-text">Intermédio</span></div>
+                <div class="lang-bar"><div class="lang-fill" style="width:60%"></div></div>
+            </div>
+        </div>
+        <div class="lang-item">
+            <img class="lang-flag" src="imgs/iu.jpg" alt="Reino Unido">
+            <div class="lang-info">
+                <div class="lang-name">Inglês <span class="lang-level-text">Básico</span></div>
+                <div class="lang-bar"><div class="lang-fill" style="width:35%"></div></div>
+            </div>
+        </div>
+    </div>
+    <div class="cv-section">
+        <div class="cv-section-title">Escola</div>
+        <div class="cv-item">
+            <div class="cv-dot"></div>
+            <div>
+                <div class="cv-item-title">EPAD</div>
+                <div class="cv-item-sub">Formação no curso Tecnico Profissional de Multimédia</div>
+            </div>
+        </div>
+    </div>
+    <div class="cv-section">
+        <div class="cv-section-title">Competências Pessoais</div>
+        <div class="cv-skills">
+            <span class="cv-skill">Comunicação</span>
+            <span class="cv-skill">Trabalho em equipa</span>
+            <span class="cv-skill">Organização</span>
+            <span class="cv-skill">Atenção aos detalhes</span>
+            <span class="cv-skill">Planeamento</span>
+            <span class="cv-skill">Empatia</span>         
+            <span class="cv-skill">Curiosidade</span>
+            <span class="cv-skill">Vontade de aprender</span>
+            <span class="cv-skill">Tomada de decisão</span>
+            <span class="cv-skill">Edição de vídeo</span>
+            <span class="cv-skill">Edição de imagem</span>
+            <span class="cv-skill">Edição de áudio</span> 
+            <span class="cv-skill">Design</span>
+            <span class="cv-skill">Animação 2D</span>
+            <span class="cv-skill">Animação 3D</span>
+            <span class="cv-skill">Modelagem 3D</span>
+            
+
+
+        </div>
+    </div>
+</div>
+
+
+<div class="panel" id="contactPanel">
+    <button class="close-btn" data-close="contactPanel">&times;</button>
+    <div class="panel-header">Contacto</div>
+    <div class="contact-hero">
+    </div>
+    <div class="contact-divider"></div>
+    <div class="contact-cards">
+        <a class="contact-card" href="email:aluno224085@epad.edu.pt">
+            <div class="contact-card-icon">📧</div>
+            <div>
+                <div class="contact-card-label">Email Escolar</div>
+                <div class="contact-card-value">aluno224085@epad.edu.pt</div>
+            </div>
+        </a>
+        <a class="contact-card" href="email:gustavoifernandes99@gmail.com">
+            <div class="contact-card-icon">📧</div>
+            <div>
+                <div class="contact-card-label">Email Pessoal</div>
+                <div class="contact-card-value">gustavoifernandes99@gmail.com</div>
+            </div>
+        </a>
+        <div class="contact-card">
+            <div class="contact-card-icon">📞</div>
+            <div>
+                <div class="contact-card-label">Telefone</div>
+                <div class="contact-card-value">+351 932 192 135</div>
+            </div>
+        </div>
+        <a class="contact-card" href="https://github.com/GustavoIF99" target="_blank">
+            <div class="contact-card-icon">💻</div>
+            <div>
+                <div class="contact-card-label">GitHub</div>
+                <div class="contact-card-value">GustavoIF99</div>
+            </div>
+        </a>
+        <a class="contact-card" href="https://www.instagram.com/gustavo.i.f/" target="_blank">
+            <div class="contact-card-icon">📸</div>
+            <div>
+                <div class="contact-card-label">Instagram</div>
+                <div class="contact-card-value">@gustavo.i.f</div>
+            </div>
+        </a>
+        <div class="contact-card">
+            <div class="contact-card-icon">📍</div>
+            <div>
+                <div class="contact-card-label">Morada</div>
+                <div class="contact-card-value">Travessa das Olaias, Ramada</div>
+            </div>
+        </div>
+    </div>
+    <div class="contact-divider"></div>
+    <a class="contact-cta" href="mailto:aluno224085@epad.edu.pt">Enviar Email</a>
+    <div class="contact-footer">Respondo normalmente em 24 horas</div>
+</div>
+
+<div class="panel panel-wide" id="projectPanel">
+    <button class="close-btn" data-close="projectPanel">&times;</button>
+    <div class="panel-header">Projetos</div>
+    <div class="projects-grid">
+
+        <div class="project-card" data-project="0">
+            <div class="project-thumb"><img src="imgs/premier.png" alt="Premiere Pro" style="width:64px;height:64px;"></div>
+            <div class="project-body">
+                <span class="project-tag">Vídeo &middot; Premiere Pro</span>
+                <div class="project-title">Edição de Vídeo</div>
+                <div class="project-desc">Projetos de edição de vídeo com Adobe Premiere Pro.</div>
+                <button class="project-btn" onclick="openCarousel(0)">Ver mais</button>
+            </div>
+        </div>
+
+        <div class="project-card" data-project="1">
+            <div class="project-thumb"><img src="imgs/po.png" alt="Photoshop" style="width:64px;height:64px;"></div>
+            <div class="project-body">
+                <span class="project-tag">Imagem &middot; Photoshop</span>
+                <div class="project-title">Edição de Imagem</div>
+                <div class="project-desc">Trabalhos de design gráfico e edição de imagem com Adobe Photoshop.</div>
+                <button class="project-btn" onclick="openCarousel(1)">Ver mais</button>
+            </div>
+        </div>
+
+        <div class="project-card" data-project="2">
+            <div class="project-thumb"><img src="imgs/aft2.png" alt="After Effects" style="width:64px;height:64px;"></div>
+            <div class="project-body">
+                <span class="project-tag">After Effects</span>
+                <div class="project-title">Motion Graphics</div>
+                <div class="project-desc">Animações e efeitos visuais com Adobe After Effects.</div>
+                <button class="project-btn" onclick="openCarousel(2)">Ver mais</button>
+            </div>
+        </div>
+
+        <div class="project-card" data-project="3">
+            <div class="project-thumb"><img src="imgs/an.png" alt="Animate" style="width:64px;height:64px;"></div>
+            <div class="project-body">
+                <span class="project-tag">Animação &middot; Animate</span>
+                <div class="project-title">Animação 2D</div>
+                <div class="project-desc">Animações 2D interativas criadas com Adobe Animate.</div>
+                <button class="project-btn" onclick="openCarousel(3)">Ver mais</button>
+            </div>
+        </div>
+
+        <div class="project-card" data-project="4">
+            <div class="project-thumb"><img src="imgs/ilu.png" alt="Illustrator" style="width:64px;height:64px;"></div>
+            <div class="project-body">
+                <span class="project-tag">Illustrator</span>
+                <div class="project-title">Ilustrações</div>
+                <div class="project-desc">Criações vetoriais e ilustrações com Adobe Illustrator.</div>
+                <button class="project-btn" onclick="openCarousel(4)">Ver mais</button>
+            </div>
+        </div>
+
+        <div class="project-card" data-project="5">
+            <div class="project-thumb"><img src="imgs/3dsmax.png" alt="3ds Max" style="width:64px;height:64px;"></div>
+            <div class="project-body">
+                <span class="project-tag">3ds Max</span>
+                <div class="project-title">Modelagem 3D</div>
+                <div class="project-desc">Modelos e coisas 3D criados com Autodesk 3ds Max.</div>
+                <button class="project-btn" onclick="openCarousel(5)">Ver mais</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="carousel-overlay" id="carouselOverlay">
+    <div class="carousel-container">
+        <button class="carousel-close" id="carouselClose">&times;</button>
+        <div class="carousel-title" id="carouselTitle">Projeto</div>
+        <div class="carousel-body">
+            <button class="carousel-arrow" id="carouselPrev">&#8249;</button>
+            <div class="carousel-viewport" id="carouselViewport">
+                <div class="carousel-placeholder">
+                    <video width="320" height="240" controls>
+                        <source src="videos/Pixels.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <button class="carousel-arrow" id="carouselNext">&#8250;</button>
+        </div>
+        <div class="carousel-counter" id="carouselCounter"></div>
+    </div>
+</div>
+
+<canvas id="c"></canvas>
+
+<script src="cubo.js"></script>
+
+</body>
+</html>
