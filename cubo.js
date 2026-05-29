@@ -296,13 +296,13 @@ const projectMedia = [
     {
         title: 'Photoshop - Design Gráfico',
         items: [
-            { type: 'image', src: 'imgs/eu.jpg' },
-            { type: 'image', src: 'imgs/minhalinda.jpg' },
+            { type: 'image', src: 'imgs/eu.JPG' },
+            { type: 'image', src: 'imgs/minhalinda.JPG' },
             { type: 'image', src: 'imgs/her.jpg' },
             { type: 'image', src: 'imgs/mdcai.jpg' },
             { type: 'image', src: 'imgs/maca.jpg' },
             { type: 'image', src: 'imgs/rl.jpg' },
-            { type: 'image', src: 'imgs/gira.jpg' },
+            { type: 'image', src: 'imgs/gira.JPG' },
             { type: 'image', src: 'imgs/crr.jpg' },
             { type: 'image', src: 'imgs/crr2.jpg' },
         ]
