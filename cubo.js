@@ -304,7 +304,7 @@ const projectMedia = [
             { type: 'image', src: 'imgs/rl.jpg' },
             { type: 'image', src: 'imgs/gira.JPG' },
             { type: 'image', src: 'imgs/crr.jpg' },
-            { type: 'image', src: 'imgs/crr2.jpg' },
+            { type: 'image', src: 'imgs/crr2.JPG' },
         ]
     },
     {
